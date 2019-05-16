@@ -21,7 +21,6 @@
 
             if(!$done){
                 if(isset($next_cursor) && $insert > 0){
-                    sleep(60);
                     $direct_messages = $connection->get("direct_messages/events/list", ["count" => 50, "cursor" => $next_cursor]); // get list of direct messages
                 } else {
                     $direct_messages = $connection->get("direct_messages/events/list", ["count" => 50]);
@@ -105,6 +104,6 @@
             }
         };
 
-        sleep(60);
+        sleep(10);
     }
 ?>
